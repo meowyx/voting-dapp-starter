@@ -1,111 +1,36 @@
-# LineaVote
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-### Installing Dependencies
+## Getting Started
 
-Navigate into your project directory:
-
-```bash
-cd voting-dapp-starter
-
-```
-
-Install all the necessary dependencies:
+First, run the development server:
 
 ```bash
-pnpm install
-
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-This command will install all packages for both the frontend and backend components.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-To ensure everything is set up correctly, let's run the development servers.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-**For the Frontend:**
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-1. Navigate to the `site` directory:
-    
-    ```bash
-    cd packages/site
-    
-    ```
-    
-2. Start the Next.js development server:
-    
-    ```bash
-    pnpm dev
-    
-    ```
-    
-3. Open your browser and go to `http://localhost:3000` to see the frontend running.
+## Learn More
 
-**For the Backend:**
+To learn more about Next.js, take a look at the following resources:
 
-1. Open a new terminal window.
-2. Navigate to the `blockchain` directory:
-    
-    ```bash
-    cd packages/blockchain
-    
-    ```
-    
-3. Compile the default smart contracts:
-    
-    ```bash
-    pnpm hardhat compile
-    
-    ```
-    
-    This will compile the sample contracts included in the HardHat setup.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Before deploying, compile the contract by running the following command in the `blockchain` directory:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-```bash
-npx hardhat compile
+## Deploy on Vercel
 
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-This will compile your Solidity code and prepare it for deployment.
-
-### Setting Up Environment Variables
-
-Before deploying the smart contract, ensure that your `.env` file in the `packages/blockchain` directory is updated with the necessary environment variables:
-
-```bash
-# Infura API key for connecting to Ethereum networks
-INFURA_API_KEY=your_infura_api_key_here
-
-# Private key of the account to be used for deployments and transactions
-ACCOUNT_PRIVATE_KEY=your_account_private_key_here
-
-```
-
-- Replace `your_infura_api_key_here` with your actual Infura API key.
-- Replace `your_account_private_key_here` with the private key of the Ethereum account you will use for deploying the contract
-
-To deploy the smart contract to the Linea testnet, run the following command from the `blockchain` directory:
-
-```bash
-npx hardhat ignition deploy ignition/modules/Voting.ts --network linea-testnet
-
-```
-
-This command tells Hardhat to use Ignition to deploy the `Voting` module to the `linea-testnet` network.
-
-Alternatively, you can add a deployment script to your `package.json` to simplify the process. Add the following line under the `"scripts"` section:
-
-
-```json
-"scripts": {
-  "deploy:testnet": "npx hardhat ignition deploy ignition/modules/Voting.ts --network linea-testnet"
-}
-
-```
-
-Now you can deploy the contract by simply running:
-
-```bash
-pnpm run deploy:testnet
-
-```
-
-After deployment, you'll receive the contract address. Keep this address safe, as we'll need it when integrating with the frontend.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
