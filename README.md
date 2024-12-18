@@ -47,15 +47,6 @@ To ensure everything is set up correctly, let's run the development servers.
     cd packages/blockchain
     
     ```
-    
-3. Compile the default smart contracts:
-    
-    ```bash
-    pnpm hardhat compile
-    
-    ```
-    
-    This will compile the sample contracts included in the HardHat setup.
 
 Before deploying, compile the contract by running the following command in the `blockchain` directory:
 
